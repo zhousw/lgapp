@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div>
+      <img src="../../assets/imgs/che.jpg" height="100px">
+    </div>
+    <ion-grid style="margin-top: 10px;">
+      <ion-row>
+        <ion-col col-6 style="height:300px">
+           <a>正在拉的活</a>
+        </ion-col>
+        <ion-col col-6>
+          <a> 我拉的活</a>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <a>专属客服</a>
+        </ion-col>
+        <ion-col col-6>
+          <a (click)="goLock()">用还锁</a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>
