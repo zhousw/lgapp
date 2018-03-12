@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
 @IonicPage()
 @Component({
-  selector: 'page-my-lock',
-  templateUrl: 'my-lock.html',
+  selector: 'page-lock-record',
+  templateUrl: 'lock-record.html',
 })
-export class MyLockPage {
+export class LockRecordPage {
 
-  title = '我的锁';
-
+  title = '用锁记录';
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MyLockPage');
+    console.log('ionViewDidLoad LockRecordPage');
   }
 
 }

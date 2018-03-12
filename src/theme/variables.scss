@@ -71,16 +71,6 @@ $colors: (
 // default are overridden.
 
 @import "ionic.theme.default";
-
-ion-page.modal {
-  padding: 30px;
-  background: rgba(0,0,0,0.5);
-  width: 100px;
-  height: 100px;
-}
-.disabledfeature{
-  color: #8f8f8f;
-}
     
 // $modal-inset-min-width:100px;
 // $modal-inset-min-height-small:100px;

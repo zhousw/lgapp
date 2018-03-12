@@ -7,7 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from "../pages/tabs/tabs";
 import { ContainerPage } from "../pages/container/container";
-import { MyLockPage } from "../pages/my-lock/my-lock";
+import { LockPage } from "../pages/lock/lock";
 import { HomePage } from '../pages/home/home';
 import { PersonalCenterPage } from "../pages/personal-center/personal-center";
 
@@ -16,20 +16,23 @@ import { PersonalCenterPage } from "../pages/personal-center/personal-center";
     MyApp,
     TabsPage,
     ContainerPage,
-    MyLockPage,
+    LockPage,
     HomePage,
     PersonalCenterPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      backButtonText: '返回',
+      iconMode: 'ios'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     TabsPage,
     ContainerPage,
-    MyLockPage,
+    LockPage,
     HomePage,
     PersonalCenterPage
   ],
