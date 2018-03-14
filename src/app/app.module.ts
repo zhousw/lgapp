@@ -5,11 +5,11 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { TabsPage } from "../pages/tabs/tabs";
-import { ContainerPage } from "../pages/container/container";
-import { LockPage } from "../pages/lock/lock";
-import { HomePage } from '../pages/home/home';
-import { PersonalCenterPage } from "../pages/personal-center/personal-center";
+import { TabsPage } from "../pages/tab-Pages/tabs/tabs";
+import { ContainerPage } from "../pages/tab-Pages/container/container";
+import { LockPage } from "../pages/tab-Pages/lock/lock";
+import { HomePage } from '../pages/tab-Pages/home/home';
+import { PersonalCenterPage } from "../pages/tab-Pages/personal-center/personal-center";
 
 @NgModule({
   declarations: [
