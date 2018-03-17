@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,ModalController,AlertController } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams,ModalController,AlertController} from 'ionic-angular';
+import { ComponentUtil } from "../../../utils/ComponentUtil";
 @IonicPage()
 @Component({
   selector: 'page-lock',
   templateUrl: 'lock.html',
+  providers:[
+    ComponentUtil
+  ]
 })
 export class LockPage {
 
@@ -14,7 +17,8 @@ export class LockPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private modalCtrl : ModalController,
-    private alertCtrl:AlertController
+    private alertCtrl:AlertController,
+    private componentUtil:ComponentUtil
   ) {
   }
 
@@ -65,11 +69,31 @@ export class LockPage {
         {
           text: '确定',
           handler: data => {
-            console.log('Cancel clicked');
+            this.componentUtil.PaySheet();
           }
         }
       ]
     }).present()
+  }
+
+  account_Recharge(){
+    this.alertCtrl.create({
+      title:'余额充值',
+      inputs:[
+        {
+          type: 'text',
+          placeholder:'充值金额'
+        }
+      ],
+      buttons:[
+        {
+          text: '确认去支付',
+          handler: data => {
+            this.componentUtil.wechatPaySheet();
+          }
+        }
+      ]
+    }).present();
   }
 
 

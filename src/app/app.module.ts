@@ -18,7 +18,7 @@ import { PersonalCenterPage } from "../pages/tab-Pages/personal-center/personal-
     ContainerPage,
     LockPage,
     HomePage,
-    PersonalCenterPage
+    PersonalCenterPage,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,7 @@ import { PersonalCenterPage } from "../pages/tab-Pages/personal-center/personal-
     ContainerPage,
     LockPage,
     HomePage,
-    PersonalCenterPage
+    PersonalCenterPage,
   ],
   providers: [
     StatusBar,
