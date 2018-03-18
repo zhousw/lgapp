@@ -24,7 +24,8 @@ import { PersonalCenterPage } from "../pages/tab-Pages/personal-center/personal-
     BrowserModule,
     IonicModule.forRoot(MyApp,{
       backButtonText: '返回',
-      iconMode: 'ios'
+      iconMode: 'ios',
+      mode:'ios'
     })
   ],
   bootstrap: [IonicApp],

@@ -1,18 +1,44 @@
-<!--
-  Generated template for the PersonalCenterPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>personalCenter</ion-title>
-  </ion-navbar>
-
+<ion-header class="header">
+          <ion-row class="content">
+            <ion-col col-2><img class="photo" src="./assets/imgs/photo.jpg"></ion-col>
+            <ion-col col-7 class="info">
+               <div class="m-bottom">
+                  <span class="white m-right-large">17757920735</span><span class="status">已认证</span>
+               </div>
+               <div class="m-bottom">
+                  <span class="white m-right"><ion-icon ios="logo-usd"></ion-icon>20181.00元</span> <a class="a-orange m-right" (click)="earnest_Recharge()">充值</a><a class="a-orange" (click)="moneyRecordSearch()">记录查询</a>
+               </div>
+               <div class="m-bottom">
+                <span class="white m-right"><ion-icon ios="ios-lock"></ion-icon>20181.00元</span> <a class="a-orange m-right" (click)="account_Recharge()">充值</a><a class="a-orange" (click)="accountRecordSearch()">记录查询</a>
+               </div>
+            </ion-col>
+            <ion-col col-3 class="setting">个人设置&nbsp;<ion-icon ios="ios-arrow-forward"></ion-icon></ion-col>
+          </ion-row>
 </ion-header>
 
 
 <ion-content padding>
-
+    <ion-list no-lines>
+        <button ion-item>
+          <ion-icon ios="ios-person" class="icon"></ion-icon>修改车辆信息
+        </button>
+        <button ion-item>
+          <ion-icon ios="ios-document" class="icon"></ion-icon>收入报表
+        </button>
+        <button ion-item>
+          <ion-icon ios="logo-usd" class="icon"></ion-icon>提现管理
+        </button>
+        <button ion-item>
+          <ion-icon ios="ios-settings" class="icon"></ion-icon>系统设置
+        </button>
+        <button ion-item>
+          <ion-icon ios="ios-home" class="icon"></ion-icon>拿箱单地址
+        </button>
+        <button ion-item>
+          <ion-icon ios="ios-information-circle" class="icon"></ion-icon>用户使用帮助
+        </button>
+        <button ion-item>
+          <ion-icon ios="ios-information-circle" class="icon"></ion-icon>关于我们
+        </button>
+    </ion-list>
 </ion-content>

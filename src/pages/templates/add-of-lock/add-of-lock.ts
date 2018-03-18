@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -8,11 +8,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddOfLockPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  lock={
+    alias : '' ,
+    number : ''
+  }
+  
+  
+  constructor(
+    public navCtrl: NavController,
+     public navParams: NavParams,
+     private viewCtrl : ViewController
+    ) {
   }
 
   closeModal(){
     this.navCtrl.pop();
+  }
+
+  add(){
+    this.viewCtrl.dismiss(this.lock);
   }
 
 }
