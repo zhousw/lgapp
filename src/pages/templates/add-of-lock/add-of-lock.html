@@ -17,7 +17,7 @@
         <ion-row>
             <ion-col col-2> 锁号：</ion-col>
             <ion-col col-6><input type="text" [(ngModel)]="lock.number"/></ion-col>
-            <ion-col col-4 class="scan"><ion-icon ios="ios-qr-scanner"></ion-icon></ion-col>
+            <ion-col col-4 class="scan" (click)="qrScan()"><ion-icon ios="ios-qr-scanner"></ion-icon></ion-col>
         </ion-row>
        
         <ion-row>

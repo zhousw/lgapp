@@ -82,4 +82,12 @@ export class PersonalCenterPage {
     }).present();
   }
 
+  carInfo(){
+    this.navCtrl.push("CarInfoPage");
+  }
+
+  personalSettings(){
+    this.navCtrl.push('PersonalSettingsPage');
+  }
+
 }

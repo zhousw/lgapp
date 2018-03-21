@@ -15,12 +15,14 @@ export class ComponentUtil{
           buttons: [
             {
               text: '微信支付',
+              role: 'destructive',
               handler: () => {
                 console.log('Archive clicked');
               }
             },
             {
               text: '取消',
+              role: 'cancel',
               handler: () => {
                 console.log('Cancel clicked');
               }
@@ -37,6 +39,7 @@ export class ComponentUtil{
           buttons: [
             {
               text: '余额支付',
+              role: 'destructive',
               handler: () => {
                 console.log('Archive clicked');
               }
@@ -49,6 +52,7 @@ export class ComponentUtil{
             },
             {
               text: '取消',
+              role: 'cancel',
               handler: () => {
                 console.log('Cancel clicked');
               }

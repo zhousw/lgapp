@@ -4,24 +4,16 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-import { TabsPage } from "../pages/tab-Pages/tabs/tabs";
-import { ContainerPage } from "../pages/tab-Pages/container/container";
-import { LockPage } from "../pages/tab-Pages/lock/lock";
-import { HomePage } from '../pages/tab-Pages/home/home';
-import { PersonalCenterPage } from "../pages/tab-Pages/personal-center/personal-center";
+import { CommonServiceProvider } from '../providers/common-service/common-service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
-    MyApp,
-    TabsPage,
-    ContainerPage,
-    LockPage,
-    HomePage,
-    PersonalCenterPage,
+    MyApp
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp,{
       backButtonText: '返回',
       iconMode: 'ios',
@@ -30,17 +22,13 @@ import { PersonalCenterPage } from "../pages/tab-Pages/personal-center/personal-
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    TabsPage,
-    ContainerPage,
-    LockPage,
-    HomePage,
-    PersonalCenterPage,
+    MyApp
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CommonServiceProvider
   ]
 })
 export class AppModule {}

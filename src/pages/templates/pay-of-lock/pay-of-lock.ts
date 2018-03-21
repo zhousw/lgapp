@@ -34,7 +34,8 @@ export class PayOfLockPage {
     let options: ZBarOptions = {
       flash: 'off',
       text_title: '扫码',
-      drawSight: false
+      text_instructions: '请将二维码置于中央',
+      drawSight: true
     };
 
     this.zbar.scan(options)

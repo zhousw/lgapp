@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, IonicPage } from 'ionic-angular';
 
-import { ContainerPage } from "../container/container";
-import { LockPage } from "../lock/lock";
-import { HomePage } from '../home/home';
-import { PersonalCenterPage } from "../personal-center/personal-center";
 import { CommonUtil } from "../../../utils/commonUtil";
 
+@IonicPage()
 @Component({
   templateUrl: 'tabs.html',
   providers:[
@@ -15,17 +12,17 @@ import { CommonUtil } from "../../../utils/commonUtil";
 })
 export class TabsPage {
 
-  Home = HomePage;
-  container = ContainerPage;
-  myLock = LockPage;
-  personalCenter = PersonalCenterPage
+  Home = 'HomePage';
+  container = 'ContainerPage';
+  myLock = 'LockPage';
+  personalCenter = 'PersonalCenterPage'
     
   constructor(
     private navCtrl:NavController,
     private commonUtil:CommonUtil
   ) {
     if(commonUtil.isNull( window.localStorage.getItem("isLogin"))){
-        this.navCtrl.setRoot('LoginPage');
+       // this.navCtrl.setRoot('LoginPage');
     }
     
   }

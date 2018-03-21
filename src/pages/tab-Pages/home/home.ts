@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController,Tabs } from 'ionic-angular';
+import { NavController,Tabs, IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import { ComponentUtil } from "../../../utils/ComponentUtil";
+import { CommonUtil } from "../../../utils/commonUtil";
 
 @IonicPage()
 @Component({
   selector: 'page-my-lock',
   templateUrl: 'my-lock.html',
   providers:[
-    ComponentUtil
+    ComponentUtil,
+    CommonUtil
   ]
 })
 export class MyLockPage {
@@ -30,7 +32,8 @@ export class MyLockPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private componentUtil:ComponentUtil,
-    private ModalCtrl:ModalController
+    private ModalCtrl:ModalController,
+    private commonUtil:CommonUtil
   ) {
   }
 
@@ -46,12 +49,14 @@ export class MyLockPage {
     let modal = this.ModalCtrl.create('AddOfLockPage')
    
     modal.onDidDismiss( data=>{
-      let newLock = {
-        name:data.alias,
-        status:'空闲',
-        number:data.number
+      if( ! this.commonUtil.isNull(data)){
+        let newLock = {
+          name:data.alias,
+          status:'空闲',
+          number:data.number
+        }
+        this.lockList.push(newLock)
       }
-      this.lockList.push(newLock)
     })
     modal.present();
   }
