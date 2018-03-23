@@ -90,4 +90,12 @@ export class PersonalCenterPage {
     this.navCtrl.push('PersonalSettingsPage');
   }
 
+  systemSettings(){
+    this.navCtrl.push('SystemSettingsPage');
+  }
+
+  aboutUs(){
+    this.navCtrl.push('AboutUsPage');
+  }
+
 }

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { CommonUtil } from "../../../utils/commonUtil";
-import { CommonServiceProvider } from "../../../providers/common-service/common-service";
 import * as $ from "jquery";
 import { RequestData } from "../../../model/requestData";
 import * as Encrypt from 'jsencrypt';
@@ -13,7 +12,6 @@ import * as Encrypt from 'jsencrypt';
   templateUrl: 'login.html',
   providers:[
     CommonUtil,
-    CommonServiceProvider
   ]
 })
 export class LoginPage {
@@ -27,7 +25,6 @@ export class LoginPage {
     private commonUtil:CommonUtil,
     public navParams: NavParams,
     private formBuilder:FormBuilder,
-    private commonServiceProvider:CommonServiceProvider
   ) {
     this.loginForm=this.formBuilder.group({
         userName:['',Validators.required],
@@ -65,7 +62,7 @@ export class LoginPage {
          console.log(encodeURI(data));
          console.log(encodeURI(data).replace(/\+/g, '%2B'));
 
-      //this.navCtrl.setRoot('TabsPage');
+      this.navCtrl.setRoot('TabsPage');
   }
 
 

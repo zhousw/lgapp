@@ -4,7 +4,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { CommonServiceProvider } from '../providers/common-service/common-service';
 import { HttpModule } from '@angular/http';
 
 @NgModule({
@@ -28,7 +27,6 @@ import { HttpModule } from '@angular/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CommonServiceProvider
   ]
 })
 export class AppModule {}

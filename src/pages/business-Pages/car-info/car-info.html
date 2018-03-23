@@ -1,31 +1,37 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>{{title}}</ion-title>
-  </ion-navbar>
+    <ion-navbar color="primary">
+        <ion-title>{{title}}</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-      <ion-item>
-          <ion-row (click)="update_carNumber()">
-             <ion-col col-5>车牌号：</ion-col>
-             <ion-col col-6>{{carNumber}}</ion-col>
-             <ion-col col-1><ion-icon ios="ios-arrow-forward-outline" class="icon"></ion-icon></ion-col>
-          </ion-row>
-      </ion-item>
-      <ion-item>
-          <ion-row (click)="update_drivingNumber()">
-             <ion-col col-5>行驶证号码：</ion-col>
-             <ion-col col-6>{{drivingNumber}}</ion-col>
-             <ion-col col-1><ion-icon ios="ios-arrow-forward-outline" class="icon"></ion-icon></ion-col>
-          </ion-row>
-      </ion-item>
-      <ion-item>
-          <ion-row (click)="update_drivingLicense()">
-             <ion-col col-5>行驶证</ion-col>
-             <ion-col col-6></ion-col>
-             <ion-col col-1><ion-icon ios="ios-camera-outline" class="icon"></ion-icon></ion-col>
-          </ion-row>
-      </ion-item>
-  </ion-list>
+    <ion-list>
+        <ion-item>
+            <ion-row (click)="update_carNumber()">
+                <ion-col col-5>车牌号：</ion-col>
+                <ion-col col-6>{{carNumber}}</ion-col>
+                <ion-col col-1>
+                    <ion-icon ios="ios-arrow-forward-outline" class="icon"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+        <ion-item>
+            <ion-row (click)="update_drivingNumber()">
+                <ion-col col-5>行驶证号码：</ion-col>
+                <ion-col col-6>{{drivingNumber}}</ion-col>
+                <ion-col col-1>
+                    <ion-icon ios="ios-arrow-forward-outline" class="icon"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+        <ion-item>
+            <ion-row (click)="update_drivingLicense()">
+                <ion-col col-5>行驶证</ion-col>
+                <ion-col col-6></ion-col>
+                <ion-col col-1>
+                    <ion-icon ios="ios-camera-outline" class="icon"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-list>
 </ion-content>

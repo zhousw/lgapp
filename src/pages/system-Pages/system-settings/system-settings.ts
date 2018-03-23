@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ActionSheetController } from 'ionic-angular';
 
-/**
- * Generated class for the SystemSettingsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +9,40 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SystemSettingsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  title = '系统设置';
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private actionSheetCtrl:ActionSheetController
+  ) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SystemSettingsPage');
+  clearCache(){
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '确定清除缓存吗',
+      enableBackdropDismiss:false,
+      buttons: [
+        {
+          text: '确定',
+          role: 'destructive',
+          handler: () => {
+            console.log('Destructive clicked');
+          }
+        },
+        {
+          text: '取消',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+
+  loginOut(){
+    
   }
 
 }

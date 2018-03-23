@@ -10,7 +10,6 @@ import * as angular from "angular";
   ]
 })
 export class CommonServiceProvider {
-  
 
   constructor(
     private http: Http,
