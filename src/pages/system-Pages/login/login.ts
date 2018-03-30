@@ -5,6 +5,7 @@ import { CommonUtil } from "../../../utils/commonUtil";
 import * as $ from "jquery";
 import { RequestData } from "../../../model/requestData";
 import * as Encrypt from 'jsencrypt';
+import { Md5 } from 'ts-md5/dist/md5';
 
 @IonicPage()
 @Component({
@@ -61,6 +62,11 @@ export class LoginPage {
          console.log(data);
          console.log(encodeURI(data));
          console.log(encodeURI(data).replace(/\+/g, '%2B'));
+         console.log("md5")
+         console.log(Md5.hashStr("123456").toString());
+         console.log("key")
+         console.log(Md5.hashStr("2a0c4efab9a311f2ea0710348c320771").toString());
+
 
       this.navCtrl.setRoot('TabsPage');
   }
