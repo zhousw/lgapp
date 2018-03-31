@@ -5,7 +5,9 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
-import { LoginServiceProvider } from '../providers/login-service/login-service';
+import { AppConfig } from "../app/appConfig";
+import { CommonServiceProvider } from "../providers/common-service/common-service";
+import { CommonUtil } from "../utils/commonUtil";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LoginServiceProvider,
+    AppConfig,
+    CommonServiceProvider,
+    CommonUtil
   ]
 })
 export class AppModule {}

@@ -10,20 +10,16 @@ import * as angular from "angular";
   ]
 })
 export class CommonServiceProvider {
-  
-
   constructor(
     private http: Http,
-    private commonUtil:CommonUtil,
+    private commonUtil:CommonUtil
   ) {}
 
   HttpPost(url,requestBody?,Header?:Headers){
     if(this.commonUtil.isNull(Header)){
-      
-      Header = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
+      Header = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});// application/json;charset=UTF-8
     }
-
-    //http://114.55.144.109
+    alert(angular.toJson(requestBody))
     return this.http.post(url,angular.toJson(requestBody),new RequestOptions({headers: Header}))
       .toPromise()
       .then(res => this.handleSuccess(res.json())) 
@@ -31,14 +27,14 @@ export class CommonServiceProvider {
     }
 
     private handleSuccess(result) {
-      if (result && !(result.retcode != '00')) {
-        this.commonUtil.toast_position(result.msg,'bottom');                                           
-      }                                      
+      // if (result && !(result.retcode != '00')) {
+      //   this.commonUtil.toast_position(result.msg,'bottom');                                           
+      // }                                      
       return result; 
     }
 
     private handleError(error: Response | any) {
-      let msg = '获取数据失败!';
+      let msg = '获取数据异常!';
       if (error.status == 0) {
         msg = '请求地址错误';
       }
