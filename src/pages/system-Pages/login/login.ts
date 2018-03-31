@@ -51,7 +51,7 @@ export class LoginPage {
 
         let requestData = new RequestData();
         requestData.set_reqHead("","1","0");
-        requestData.set_reqKey("fe344b6ebe86404d6a978c813ba7b460");
+        requestData.set_reqKey("67b65daf6343e8070f43457511733f69");
         // alert("公钥head："+angular.toJson(this.requestData.get_reqHead()))
         // alert("公钥body："+angular.toJson(this.requestData.get_reqBody()))
         // alert("公钥key："+angular.toJson(this.requestData.get_reqKey()))
@@ -76,18 +76,19 @@ export class LoginPage {
         phoneNum:userName
       })
       requestData2.set_reqHead("","1","1");
+      console.log(angular.toJson(requestData2.get_reqHead()) + encodeURIComponent(angular.toJson(requestData2.get_reqBody()))+"_"+'');
       requestData2.set_reqKey(Md5.hashStr(angular.toJson(requestData2.get_reqHead()) + encodeURIComponent(angular.toJson(requestData2.get_reqBody()))+"_"+'').toString());
       // alert("登陆head："+angular.toJson(this.requestData.get_reqHead()))
       // alert("登陆body："+angular.toJson(this.requestData.get_reqBody()))
       // alert("登陆key："+angular.toJson(this.requestData.get_reqKey()))
-      this.loginServiceProvider.login( 
-                              requestData2.get_reqHead(),
-                              requestData2.get_reqBody(),
-                              requestData2.get_reqKey())
-                    .then(res=>{
-                        alert("登陆结果:"+angular.toJson(res))
-                        //this.navCtrl.setRoot('TabsPage');
-                    })
+      // this.loginServiceProvider.login( 
+      //                         requestData2.get_reqHead(),
+      //                         requestData2.get_reqBody(),
+      //                         requestData2.get_reqKey())
+      //               .then(res=>{
+      //                   alert("登陆结果:"+angular.toJson(res))
+      //                   //this.navCtrl.setRoot('TabsPage');
+      //               })
     }
 
 
