@@ -39,55 +39,56 @@ export class LoginPage {
 }
 
     login(values){
-        let userName = $.trim(values.userName)
-        let passWord   = $.trim(values.passWord)
-        if( this.commonUtil.isNull(userName)){
-          this.commonUtil.toast_position("请输入用户名！",'bottom');
-          return;
-        }else if( this.commonUtil.isNull(passWord)){
-          this.commonUtil.toast_position("请输入密码",'bottom');
-          return;
-        }
+      //   let userName = $.trim(values.userName)
+      //   let passWord   = $.trim(values.passWord)
+      //   if( this.commonUtil.isNull(userName)){
+      //     this.commonUtil.toast_position("请输入用户名！",'bottom');
+      //     return;
+      //   }else if( this.commonUtil.isNull(passWord)){
+      //     this.commonUtil.toast_position("请输入密码",'bottom');
+      //     return;
+      //   }
 
-        let requestData = new RequestData();
-        requestData.set_reqHead("","1","0");
-        requestData.set_reqKey("fe344b6ebe86404d6a978c813ba7b460");
-        // alert("公钥head："+angular.toJson(this.requestData.get_reqHead()))
-        // alert("公钥body："+angular.toJson(this.requestData.get_reqBody()))
-        // alert("公钥key："+angular.toJson(this.requestData.get_reqKey()))
-        this.loginServiceProvider.getPublicKey(
-                              requestData.get_reqHead(),
-                              requestData.get_reqBody(),
-                              requestData.get_reqKey())
-                .then(res=>{
-                    alert("获取公钥结果:"+angular.toJson(res))
-        })
+      //   let requestData = new RequestData();
+      //   requestData.set_reqHead("","1","0");
+      //   requestData.set_reqKey("fe344b6ebe86404d6a978c813ba7b460");
+      //   // alert("公钥head："+angular.toJson(this.requestData.get_reqHead()))
+      //   // alert("公钥body："+angular.toJson(this.requestData.get_reqBody()))
+      //   // alert("公钥key："+angular.toJson(this.requestData.get_reqKey()))
+      //   this.loginServiceProvider.getPublicKey(
+      //                         requestData.get_reqHead(),
+      //                         requestData.get_reqBody(),
+      //                         requestData.get_reqKey())
+      //           .then(res=>{
+      //               alert("获取公钥结果:"+angular.toJson(res))
+      //   })
 
-      //公钥
-      let publicKey = 'MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALcNI4LbUUiBbJSiJOm+L9xEYke2 wXfnWJ4BzCJFKbnob+QT2i8lyKlpvYrW2l977it+JDzv9fcH73F/cXJrI+0C AwEAAQ=='
-      let encrypt = new Encrypt.JSEncrypt();
-      encrypt.setPublicKey(publicKey);
-      passWord = encrypt.encrypt(passWord);
-      let requestData2 = new RequestData();
-      requestData2.set_reqBody({
-        mobile:userName,
-        password:passWord,
-        imei:"",
-        phoneNum:userName
-      })
-      requestData2.set_reqHead("","1","1");
-      requestData2.set_reqKey(Md5.hashStr(angular.toJson(requestData2.get_reqHead()) + encodeURIComponent(angular.toJson(requestData2.get_reqBody()))+"_"+'').toString());
-      // alert("登陆head："+angular.toJson(this.requestData.get_reqHead()))
-      // alert("登陆body："+angular.toJson(this.requestData.get_reqBody()))
-      // alert("登陆key："+angular.toJson(this.requestData.get_reqKey()))
-      this.loginServiceProvider.login( 
-                              requestData2.get_reqHead(),
-                              requestData2.get_reqBody(),
-                              requestData2.get_reqKey())
-                    .then(res=>{
-                        alert("登陆结果:"+angular.toJson(res))
-                        //this.navCtrl.setRoot('TabsPage');
-                    })
+      // //公钥
+      // let publicKey = 'MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALcNI4LbUUiBbJSiJOm+L9xEYke2 wXfnWJ4BzCJFKbnob+QT2i8lyKlpvYrW2l977it+JDzv9fcH73F/cXJrI+0C AwEAAQ=='
+      // let encrypt = new Encrypt.JSEncrypt();
+      // encrypt.setPublicKey(publicKey);
+      // passWord = encrypt.encrypt(passWord);
+      // let requestData2 = new RequestData();
+      // requestData2.set_reqBody({
+      //   mobile:userName,
+      //   password:passWord,
+      //   imei:"",
+      //   phoneNum:userName
+      // })
+      // requestData2.set_reqHead("","1","1");
+      // requestData2.set_reqKey(Md5.hashStr(angular.toJson(requestData2.get_reqHead()) + encodeURIComponent(angular.toJson(requestData2.get_reqBody()))+"_"+'').toString());
+      // // alert("登陆head："+angular.toJson(this.requestData.get_reqHead()))
+      // // alert("登陆body："+angular.toJson(this.requestData.get_reqBody()))
+      // // alert("登陆key："+angular.toJson(this.requestData.get_reqKey()))
+      // this.loginServiceProvider.login( 
+      //                         requestData2.get_reqHead(),
+      //                         requestData2.get_reqBody(),
+      //                         requestData2.get_reqKey())
+      //               .then(res=>{
+      //                   alert("登陆结果:"+angular.toJson(res))
+      //                   //this.navCtrl.setRoot('TabsPage');
+      //               })
+       this.navCtrl.setRoot('TabsPage');
     }
 
 

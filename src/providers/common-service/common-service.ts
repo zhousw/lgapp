@@ -13,11 +13,13 @@ export class CommonServiceProvider {
   constructor(
     private http: Http,
     private commonUtil:CommonUtil
-  ) {}
+  ) {} 
 
   HttpPost(url,requestBody?,Header?:Headers){
     if(this.commonUtil.isNull(Header)){
       Header = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});// application/json;charset=UTF-8
+      // Header.append("Accept", 'application/json');
+      // Header.append('Content-Type', 'application/json' );
     }
     alert(angular.toJson(requestBody))
     return this.http.post(url,angular.toJson(requestBody),new RequestOptions({headers: Header}))
